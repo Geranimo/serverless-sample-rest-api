@@ -52,7 +52,7 @@ Resources:
       ServiceRole: !GetAtt ApplicationCodeBuildServiceRole.Arn
       Source:
         Type: CODEPIPELINE
-        BuildSpec: ./javascript-http-sam/buildspec.yml
+        BuildSpec: ./serverless-sample-rest-api-main/javascript-http-sam/buildspec.yml
       Tags:
         - Key: "Stack"
           Value: !Ref AWS::StackName
@@ -77,7 +77,7 @@ Resources:
       ServiceRole: !GetAtt IntegrationTestCodeBuildServiceRole.Arn
       Source:
         Type: CODEPIPELINE
-        BuildSpec: ./javascript-http-sam/__tests__/testspec.yml
+        BuildSpec: ./serverless-sample-rest-api-main/javascript-http-sam/__tests__/testspec.yml
       Tags:
         - Key: "Stack"
           Value: !Ref AWS::StackName
